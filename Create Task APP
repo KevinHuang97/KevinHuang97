@@ -1,0 +1,93 @@
+//create data list for the app//
+var randomNamePresident = getColumn("US Presidents", "President");
+var numberPresidency = getColumn("US Presidents", "Presidency");
+var imagePresident = getColumn("US Presidents", "Image");
+var index = randomNumber(0, imagePresident.length-1);
+var correctName = [];
+var nameOfPresident =[];
+var imageOfPresident = [];
+getRandomName();
+//start button change to play page//
+onEvent("startButton", "click", function( ) {
+  updateScreen();
+  setScreen("playPage");
+});
+//if-statement help to check whether the user is correct or not through parameter//
+//with for loop, it help create random name for random presidency//
+function nameGuess(namePresident) {
+  setScreen("finalPage");
+  if (namePresident==correctName[index]) {
+    setText("explainBar", "Congratulation, you are right! Thank you for playing!");
+  } else {
+    setText("explainBar", "Give it another try, you are wrong");
+  }
+  for (var i = 0; i < randomNamePresident.length; i++) {
+    if (numberPresidency[i]==randomNumber(0, 46)) {
+      appendItem(nameOfPresident, randomNamePresident[i]);
+      appendItem(imageOfPresident, imagePresident[i]);
+    }
+  }
+}
+//give different name of president as answers//
+function getRandomName() {
+  var index = randomNamePresident.length-1;
+  setText("randomName", randomNamePresident[index-randomNumber(0,9)]);
+  setText("randomName2", randomNamePresident[(index-randomNumber(10, 29))]);
+  setText("randomName3", randomNamePresident[(index-randomNumber(30, 45))]);
+}
+function getRandomName2() {
+  var index = randomNamePresident.length-1;
+  setText("randomName", randomNamePresident[index-randomNumber(0,5)]);
+  setText("randomName2", randomNamePresident[(index-randomNumber(6, 20))]);
+  setText("randomName3", randomNamePresident[(index-randomNumber(20, 45))]);
+}
+//give random name and image of president//
+function updateScreen() {
+  var index = randomNumber(0, imagePresident.length-1);
+  setProperty("image3President", "image",imagePresident[index]);
+  setText("namePresident", randomNamePresident[index]);
+  insertItem(correctName, 1, randomNamePresident[index]);
+}
+function updateScreen2() {
+  var index = randomNumber(0, imagePresident.length-2);
+  setProperty("image3President", "image",imagePresident[index]);
+  setText("namePresident", randomNamePresident[index]);
+  insertItem(correctName, 2, randomNamePresident[index]);
+}
+
+//change the play page to final page//
+onEvent("namePresident", "click", function( ) {
+  nameGuess();
+  hideElement("tryButton");
+  showElement("Restart");
+});
+//tell the users the result//
+onEvent("randomName", "click", function( ) {
+  setScreen("finalPage");
+  setText("explainBar", "Give it another try, you are wrong");
+  hideElement("Restart");
+});
+//tell the users the result//
+onEvent("randomName2", "click", function( ) {
+  setScreen("finalPage");
+  setText("explainBar", "Give it another try, you are wrong");
+  hideElement("Restart");
+});
+//tell the users the result//
+onEvent("randomName3", "click", function( ) {
+  setScreen("finalPage");
+  setText("explainBar", "Give it another try, you are wrong");
+  hideElement("Restart");
+});
+//tell the users the result//
+onEvent("tryButton", "click", function( ) {
+  setScreen("playPage");
+});
+//restart the game//
+onEvent("Restart", "click", function( ) {
+  setScreen("beginningPage");
+  updateScreen2();
+  getRandomName2();
+  showElement("tryButton");
+});
+
