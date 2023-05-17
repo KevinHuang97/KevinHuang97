@@ -1,0 +1,71 @@
+//Weijie Huang, Yingtao Cen
+onEvent("Begin", "click", function( ) {
+  setScreen("Quizquestion");
+});
+onEvent("Water2", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("window2", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("Signallight", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("Seatbelt", "click", function( ) {
+  setScreen("Quizquestion1");
+});
+onEvent("Signallight", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("Brake", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("Emergency", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("Pedal", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("Signal", "click", function( ) {
+  setScreen("Quizquestion2");
+});
+onEvent("Water4", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("Signallight2", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("Brake2", "click", function( ) {
+  setScreen("CXK#3");
+  playSound("sound://default.mp3", true);
+  stopSound("sound://default.mp3");
+});
+onEvent("Emergencylight", "click", function( ) {
+  setScreen("CXK#2");
+  playSound("sound://category_bell/bells_win_high.mp3", true);
+  stopSound("sound://category_bell/bells_win_high.mp3");
+});
+onEvent("Tryagain", "click", function( ) {
+  setScreen("Blue");
+});
+onEvent("Restart", "click", function( ) {
+  setScreen("Blue");
+});
